@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Factors challenge
+#is a challenge
 
 check_factor()
 {
 	if [ $# -ne 3 ];
+
         then
 
                 args=("$@")
@@ -11,18 +12,23 @@ check_factor()
                 num2=1
 
                 for a in ${args[*]};
+
                 do
 
                         if [ $count -gt 1 ];
+
                         then
 
                                 num2=$(echo $a*$num2 | bc)
 
                         fi
+
                         count=$((count + 1))
 
                 done
+
         else
+
                 num2=$3
 
         fi
@@ -40,13 +46,14 @@ check_factor()
                 fi
 
         echo "$num$num1*$num2"
+
 }
 
 if [ $# -ne 1 ]
 
 then
 
-        echo 'Usage: factors <file>'
+        echo 'Usage: rsa <file>'
 
         exit 1
 
@@ -61,5 +68,4 @@ else
                 check_factor $result
 
         done < "$1"
-
 fi
